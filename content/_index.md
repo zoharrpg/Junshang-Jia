@@ -20,9 +20,9 @@ interests = [
 
 [[extra.avatar_icons]]
   icon = "github"
-  link = "https://github.com/adfaure"
+  link = "https://github.com/zoharrpg"
 
 [[extra.avatar_icons]]
   icon = "linkedin"
-  link = "https://www.linkedin.com/in/adrien-faure-9958978b/"
+  link = "https://www.linkedin.com/in/junshang-jia-2048571b3/"
 +++
