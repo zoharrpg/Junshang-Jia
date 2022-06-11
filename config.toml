@@ -33,7 +33,8 @@ contact_in_index = false
 # `Name` is what it is displayed, `path` is the url
 
 menu_items = [
-  { path = "#contacts", name = "Contact" },
-  { path = "#contacts", name = "Contact" },
+  { path = "#contacts", name = "Blog" },
+  { path = "#contacts", name = "Projects" },
+  { path = "#contacts", name = "Experience" },
   { path = "Junshang-Jia-Resume.pdf", name = "CV" },
 ]
