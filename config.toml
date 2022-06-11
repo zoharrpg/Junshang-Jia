@@ -1,0 +1,40 @@
+# The URL the site will be built for
+base_url = "https://example.com"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = false
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+theme="kodama-theme"
+
+title="Junshang Jia"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = false
+
+[extra]
+# Put all your custom variables here
+contact_in_index = true
+# Put all your custom variables here
+avatar = "static/pic.jpg"
+# Image of the favicon
+favicon = "static/pic.jpg"
+
+# Your email address showed in the contact section
+email = "kodama[at]domain.com"
+
+# If you don't want to show your contact information in the index
+contact_in_index = false
+
+# Additional menu items
+# `Name` is what it is displayed, `path` is the url
+
+
+menu_items = [
+  { path = "#contacts", name = "Contact" },
+  { path = "#contacts", name = "Contact" },
+  { path = "#contacts", name = "Contact" },
+]
