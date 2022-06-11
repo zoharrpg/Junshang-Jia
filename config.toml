@@ -32,7 +32,6 @@ contact_in_index = false
 # Additional menu items
 # `Name` is what it is displayed, `path` is the url
 
-
 menu_items = [
   { path = "#contacts", name = "Contact" },
   { path = "#contacts", name = "Contact" },
