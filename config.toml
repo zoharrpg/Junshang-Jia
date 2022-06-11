@@ -35,5 +35,5 @@ contact_in_index = false
 menu_items = [
   { path = "#contacts", name = "Contact" },
   { path = "#contacts", name = "Contact" },
-  { path = "#contacts", name = "Contact" },
+  { path = "Junshang-Jia-Resume.pdf", name = "Resume" },
 ]
