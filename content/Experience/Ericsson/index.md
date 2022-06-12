@@ -5,7 +5,7 @@ date = 2021-06-21
 [extra]
 type = "Conference"
 authors = [ "Ericsson" ]
-featured = true
+featured = false
 
 #publication_types = "Conference paper"
 #publication = "09/2021"
