@@ -26,3 +26,4 @@ interests = [
   icon = "linkedin"
   link = "https://www.linkedin.com/in/junshang-jia-2048571b3/"
 +++
+Senior Year student at University of Pittsburgh with a focus on Web Development. Interned at Ericsson and worked on full stack development.
