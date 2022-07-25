@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  
+  <link rel="shortcut icon" href="https:&#x2F;&#x2F;zoharrpg.github.io&#x2F;Junshang-Jia&#x2F;processed_images&#x2F;06ba2da6e6c6be0300.png" type="image/png">
+  <link rel="icon" href="https:&#x2F;&#x2F;zoharrpg.github.io&#x2F;Junshang-Jia&#x2F;processed_images&#x2F;06ba2da6e6c6be0300.png" type="image/png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <meta charset="utf-8">
+    
+<!-- CSS -->
+<link rel="stylesheet" href="https://zoharrpg.github.io/Junshang-Jia/styles/styles.css" />
+
+    <title>Projects |  Junshang Jia</title>
+</head>
+
+<body class="bg-white">
+  <!-- Top nav bar -->
+  
+  
+  
+<nav id="header" class="w-full z-10 top-0 shadow-md mx-0">
+  <div id="progress" class="top-0"></div>
+  <!-- <div class="w-full max-w-5xl mx-auto flex flex-wrap items-center justify-between mt-0 py-2  sm:bg-green-900 md:bg-red-900 lg:bg-blue-900 bg-yellow-900"> -->
+  <div class="w-full max-w-4xl mx-auto flex sm:flex-nowrap flex-wrap items-center justify-between mt-0 py-2">
+    <div class="pl-4">
+      <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold" href="https:&#x2F;&#x2F;zoharrpg.github.io&#x2F;Junshang-Jia&#x2F;">
+        Junshang Jia
+      </a>
+    </div>
+
+    <div class="w-full flex-grow sm:flex sm:items-center flex-wrap sm:flex-nowrap sm:w-auto sm:block mt-2 sm:mt-0 bg-transparent z-20" id="nav-content">
+      <ul class="list-reset flex flex-wrap sm:justify-end flex-1 items-center">
+          <li class="mr-3 text-sm">
+              <a href=https://zoharrpg.github.io/Junshang-Jia/Blog class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Blog
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href=https://zoharrpg.github.io/Junshang-Jia/Projects class="inline-block py-2 px-4 text-sky-600 font-bold no-underline">
+                Projects
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+              <a href=https://zoharrpg.github.io/Junshang-Jia/Experience class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+                Experience
+              </a>
+            </li>
+            <li class="mr-3 text-sm">
+            <a href=https://zoharrpg.github.io/Junshang-Jia/Junshang-Jia-Resume.pdf class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4">
+              CV
+            </a>
+          </li>
+          </ul>
+    </div>
+  </div>
+
+</nav>
+
+<!-- Container -->
+  
+<div class="container max-w-3xl mx-auto px-4">
+  <div class="pt-8 flex flex">
+    <h1 class="grow font-bold font-sans break-normal text-gray-900 text-3xl">Crossword</h1>
+    <p class="text-sm md:text-base font-normal text-gray-600 py-2">Published 2022-06-02</p>
+  </div>
+  <hr class="border-b-1 border-gray-400 mb-8">
+  
+  <article class="prose prose-indigo prose max-w-3xl">
+    <h1 id="crossword-problem">Crossword-Problem<a class="zola-anchor" href="#crossword-problem" aria-label="Anchor link for: crossword-problem">🔗</a></h1>
+<p>The problem is trying to find legal words in k x k squares.Since one decision of character of a word will influence the next character and the word in rows and columns, the process of thinking about this problem is recursive, which means that I should write a recursive method to deal with this problem.When I think about this problem, I try to simplify how to find the word in the rows and columns. First, I think about how to use the character to determine the word on a board without small characters and blocks. When I determine the character of words, I will first check the dictionary that whether the word with this prefix exists for the rows and columns, then add another character and check the dictionary. If there is no prefix, then backtracking and delete the character and try another character. </p>
+<p>For every square on the board, there are 26 characters that can put in the squares. Therefore, I use the template recursive method that for each character, test whether is valid in this square, if it is valid put it in the rows and columns array and solve next squares. Until the last square in the board is solved, the program will exit. For the small characters and block case, I used the switch statement to distinguish the method that uses for character and block. The basic idea of testing characters and blocks is the same. Only some of the operations are different from the empty squares. For the character, just test whether it is valid and add it to rows and columns without any loops. For the block part, I wrote a different type of isValid method to test whether the character before the block is a valid word. I also used the last index number for each row and column to track the last index of the block to help get the correct word.</p>
+<p>The whole logic and methods in the program are not so difficult, but the bugs and issues are very difficult to find. There are many edge cases and base cases in the code that I need to consider. For example, I need to consider the special location of characters, like in the first or last rows and columns, the location of the block, and the special version of the test. Try to include all the case is difficult, I need to test many files and print what happens in the file. Most of the files can get results by running the program. There is only one file that I cannot solve the problem, the testfile8c.txt. The testifle8c is very hard to find the bug since I do not know where the problem is, just pop up the wrong result ---no solution. I think the problem is just some case I did not realize if I can use some debugging tool to get every result of the input and output so that I think I can find where the bug and problem.</p>
+<h2 id="runtime-for-different-files">Runtime for Different Files<a class="zola-anchor" href="#runtime-for-different-files" aria-label="Anchor link for: runtime-for-different-files">🔗</a></h2>
+<table><thead><tr><th>Filename</th><th>Runtime</th></tr></thead><tbody>
+<tr><td>test3a</td><td>0.13s</td></tr>
+<tr><td>test3b</td><td>0.12s</td></tr>
+<tr><td>test4a</td><td>0.02s</td></tr>
+<tr><td>test4b</td><td>0.04s</td></tr>
+<tr><td>test4c</td><td>0.15s</td></tr>
+<tr><td>test4d</td><td>0.002s</td></tr>
+<tr><td>test4e</td><td>0.20s</td></tr>
+<tr><td>test4f</td><td>0.38s</td></tr>
+<tr><td>test5a</td><td>0.16s</td></tr>
+<tr><td>test6a</td><td>&gt;30min</td></tr>
+<tr><td>test6b</td><td>1009s</td></tr>
+<tr><td>test6c</td><td>&gt;2h</td></tr>
+<tr><td>test7a</td><td>&gt;2h</td></tr>
+<tr><td>test8a</td><td>&gt;2h</td></tr>
+<tr><td>test8b</td><td>&gt;2h</td></tr>
+<tr><td>test8c</td><td>&gt;= 10min</td></tr>
+</tbody></table>
+<h2 id="asymptotic-analysis">Asymptotic Analysis<a class="zola-anchor" href="#asymptotic-analysis" aria-label="Anchor link for: asymptotic-analysis">🔗</a></h2>
+<p>The runtime is exponential</p>
+<p>Number of crossword locations in the puzzle = K Number of possible letters in a crossword location= 26 Number of words in the dictionary = N Number of characters in a word = M</p>
+<p>Worst-Case runtime = branching factor^height * runtime of nonrecursive part = 26^(K)* (MN)</p>
+
+  </article>
+</div>
+<!-- <div class="sticky bottom-0 px-3">
+    <a href="#page-top">Back to top of page</a>
+  </div> -->
+  <footer class="bg-white">
+    <div class="bg-white text-gray-400 container max-w-4xl mx-auto my-8 px-4">
+    © Junshang Jia. Theme <a class="underline" target="_blank" href="https://github.com/adfaure/kodama-theme">Kodama</a> made with <a class="underline" target="_blank" href="https://getzola.org">Zola</a>
+    </div>
+  </footer>
+  </body>
+
+</html>
