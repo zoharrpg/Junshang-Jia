@@ -15,4 +15,3 @@ SSGs use dynamic templates to transform content into static HTML pages. Static s
 
 To get a taste of Zola, please see the quick overview below.
 
-# Zola is a very good framework.
