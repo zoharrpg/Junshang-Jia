@@ -52,7 +52,7 @@ linkedin = "junshang-jia"
 
 [extra.author]
 name = "Junshang Jia"
-avatar = "/images/pic.jpg"
+avatar = "images/pic.jpg"
 
 # [extra.commenting]
 # disqus = "junshangjia"
