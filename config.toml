@@ -1,0 +1,62 @@
+# The URL the site will be built for
+base_url = "https://example.com"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+default_language = "en"
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+theme = "DeepThought"
+title = "Junshang Jia"
+
+taxonomies = [
+    { name = "categories", feed = true, paginate_by = 10 }
+]
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[search]
+# Whether to include the title of the page/section in the index
+include_title = true
+# Whether to include the description of the page/section in the index
+include_description = false
+# Whether to include the path of the page/section in the index
+include_path = false
+# Whether to include the rendered content of the page/section in the index
+include_content = true
+
+[extra.favicon]
+favicon_16x16 = "/pic.jpg"
+favicon_32x32 = "/pic.jpg"
+apple_touch_icon = "/pic.jpg"
+safari_pinned_tab = "/pic.jpg"
+webmanifest = "/pic.jpg"
+
+[extra]
+navbar_items = [
+ { code = "en", nav_items = [
+  { url = "$BASE_URL/", name = "Home" },
+  { url = "$BASE_URL/projects", name = "Projects" },
+  { url = "$BASE_URL/categories", name = "Categories" },
+  {url = "$BASE_URL/Junshang_Jia_resume.pdf", name = "Resume"}
+ ]},
+]
+[extra.social]
+email = "junshanj@andrew.cmu.edu"
+github = "zoharrpg"
+linkedin = "junshang-jia"
+
+[extra.author]
+name = "Junshang Jia"
+avatar = "/pic.jpg"
+
+# [extra.commenting]
+# disqus = "junshangjia"
+
+
+
+# Put all your custom variables here
