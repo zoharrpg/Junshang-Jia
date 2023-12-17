@@ -30,11 +30,11 @@ include_path = false
 include_content = true
 
 [extra.favicon]
-favicon_16x16 = "/pic.jpg"
-favicon_32x32 = "/pic.jpg"
-apple_touch_icon = "/pic.jpg"
-safari_pinned_tab = "/pic.jpg"
-webmanifest = "/pic.jpg"
+favicon_16x16 = "images/pic.jpg"
+favicon_32x32 = "images/pic.jpg"
+apple_touch_icon = "images/pic.jpg"
+safari_pinned_tab = "images/pic.jpg"
+webmanifest = "images/pic.jpg"
 
 [extra]
 navbar_items = [
