@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Junshang Jia - CMU-15640</title>
+    <link href="https://zoharrpg.github.io/Junshang-Jia/categories/cmu-15640/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://zoharrpg.github.io/Junshang-Jia/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-12-17T00:00:00+00:00</updated>
+    <id>https://zoharrpg.github.io/Junshang-Jia/categories/cmu-15640/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Live Sequence Protocol and Distributed Bitcoin Miner</title>
+        <published>2023-12-17T00:00:00+00:00</published>
+        <updated>2023-12-17T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://zoharrpg.github.io/Junshang-Jia/projects/ds-project-1/" type="text/html"/>
+        <id>https://zoharrpg.github.io/Junshang-Jia/projects/ds-project-1/</id>
+        
+        <content type="html">&lt;h1 id=&quot;overview&quot;&gt;Overview&lt;&#x2F;h1&gt;
+&lt;p&gt;CMU-15640 Distributed Systems Project 1&lt;br&gt;
+This project will consist of the following two parts:
+• Part A: Implement the Live Sequence Protocol, a homegrown protocol for providing reliable communication with simple client and server APIs on top of the Internet UDP protocol.
+• Part B: Implement a Distributed Bitcoin Miner.&lt;br&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zoharrpg&#x2F;Distributed-Bitcoin-Miner&quot;&gt;Source Code Link&lt;&#x2F;a&gt;&lt;br&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;zoharrpg.github.io&#x2F;Junshang-Jia&#x2F;15640-doc&#x2F;p1_23.pdf&quot;&gt;Write-Up&lt;&#x2F;a&gt;&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;part-1-live-sequence-protocol&quot;&gt;Part 1 - Live Sequence Protocol&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;lsp-overview&quot;&gt;LSP Overview&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Unlike UDP or TCP, it supports a client-server communication model.&lt;&#x2F;li&gt;
+&lt;li&gt;The server maintains connections between a number of clients, each of which is identified by a numeric connection identifier.&lt;&#x2F;li&gt;
+&lt;li&gt;Communication between the server and a client consists of a sequence of discrete messages in each direction.&lt;&#x2F;li&gt;
+&lt;li&gt;Message sizes are limited to fit within single UDP packets (around 1,000 bytes).&lt;&#x2F;li&gt;
+&lt;li&gt;Messages are sent reliably: a message sent over the network must be received exactly once, and messages must be received in the same order they were sent.&lt;&#x2F;li&gt;
+&lt;li&gt;Message integrity is ensured: a message sent over the network will be rejected if modified in transit.&lt;&#x2F;li&gt;
+&lt;li&gt;The server and clients monitor the status of their connections and detect when the other side has become disconnected.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;message-type-and-acknowledge&quot;&gt;Message type and Acknowledge&lt;&#x2F;h2&gt;
+&lt;p&gt;In this project, there are common message and acknledge message type, and the implementation is following:&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;go&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-go &quot;&gt;&lt;code class=&quot;language-go&quot; data-lang=&quot;go&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;type &lt;&#x2F;span&gt;&lt;span&gt;Message &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;struct &lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Type     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;MsgType &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; One of the message types listed above.
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;ConnID   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;int     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Unique client-server connection ID.
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;SeqNum   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;int     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Message sequence number.
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Size     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;int     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Size of the payload.
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Checksum &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;uint16  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Message checksum.
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;Payload  &lt;&#x2F;span&gt;&lt;span&gt;[]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;byte  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;&#x2F;&#x2F; Data message payload.
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The Communication is following:&lt;br&gt;
+&lt;img src=&quot;https:&#x2F;&#x2F;zoharrpg.github.io&#x2F;Junshang-Jia&#x2F;15640-graph&#x2F;p1-pic1.png&quot; alt=&quot;config.base_url&quot; &#x2F;&gt;
+&lt;img src=&quot;https:&#x2F;&#x2F;zoharrpg.github.io&#x2F;Junshang-Jia&#x2F;15640-graph&#x2F;p1-pic2.png&quot; alt=&quot;config.base_url&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
