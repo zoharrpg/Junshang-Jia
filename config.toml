@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://zoharrpg.github.io/Junshang-Jia/"
+base_url = "https://zoharrpg.github.io/Junshang-Jia"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -41,7 +41,7 @@ navbar_items = [
  { code = "en", nav_items = [
   { url = "$BASE_URL/projects", name = "Projects" },
   { url = "$BASE_URL/categories", name = "Categories" },
-  {url = "$BASE_URL/Junshang_Jia_resume.pdf", name = "Resume"}
+  {url = "$BASE_URL/document/current-resume/Junshang_Jia_resume.pdf", name = "Resume"}
  ]},
 ]
 [extra.social]
