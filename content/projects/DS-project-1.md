@@ -14,7 +14,7 @@ This project will consist of the following two parts:
 • Part 1: Implement the Live Sequence Protocol, a homegrown protocol for providing reliable communication with simple client and server APIs on top of the Internet UDP protocol.
 • Part 2: Implement a Distributed Bitcoin Miner.<br>
 [Source Code Link](https://github.com/zoharrpg/Distributed-Bitcoin-Miner)<br>
-{{ render_link(path="document/current-resume/Junshang_Jia_resume.pdf",text = "Write-Up")}}
+{{ render_link(path="15640-doc/p1_23.pdf",text = "Write-Up")}}
 
 # Part 1 - Live Sequence Protocol
 ## LSP Overview
