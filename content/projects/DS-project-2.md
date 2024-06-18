@@ -221,6 +221,9 @@ My design for vote process is not a good design, and the problem is huge. A bett
 
 Another approach is waiting for the all the vote result from all other servers.
 
+# Detial Raft Explanation Video
+{{ youtube(id="IujMVjKvWP4") }}
+
 
 
 
